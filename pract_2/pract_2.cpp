@@ -119,4 +119,52 @@ int main()
 
 
 	Draw(records);
+	cout << endl << "Практическая № 2 (Динамические массивы):" << endl;
+
+
+	Record* A;
+	int n = 3;
+	A = (Record*)malloc(n * sizeof(Record));
+	//A = (Record*)calloc(n, sizeof(Record)); 
+	for (int i = 0; i < n; i++) {
+		strcpy_s(A[i].surName, records[i].surName);
+		//strcpy_s(A[i].commandCode, records[i].commandCode);
+		//A[i].surName = records[i].surName;
+		/*A[i].year, records[i].year;*/
+		//A[i].surName.assign(records[i].surName.c_str());
+		//	*(B[i]) = records[i];
+		//basic_string<char>
+	}
+
+	Record** B;
+	B = (Record**) new Record * [10];
+	for (int i = 0; i < 10; i++) {
+		B[i] = (Record*) new Record;
+		*(B[i]) = records[i];
+	}
+
+	//
+	A = (Record*)realloc(A, 10 * sizeof(Record));
+	// 
+	//Record ** B;
+	//B = (Record**) new Record * [10];
+	//for (int i = 0; i < 10; i++) {
+	//	B[i] = (Record*) new Record;
+	//	*(B[i]) = A[i];
+	//	//B[i].surName = A[i].surName;
+	//	//*(B[i])->surName = A[i]->surName;
+	//	
+	//}
+
+	//адрес а[i], значение a[i]->строковое_поле, адрес в[i], значение в[i]->строковое_поле.
+	for (int i = 0; i < 10; i++) {
+		cout << endl << "адрес A[i] " << &A[i] << " a[i]->surName " << A[i].surName;
+		//cout << endl << "адрес B[i] " << &B[i] << " B[i]->surName " << B[i]->surName;
+	}
+
+	//for (int i = 0; i < 10; i++) {
+	//	delete B[i];
+	//}
+	//delete[]B;
+	//free(A);
 }
