@@ -216,13 +216,13 @@ void DrawWithList() {
 	cout.fill(' ');
 	struct node* current = myHead;
 	while (current) {
-		cout << left << "|"; cout.width(22); cout << left << current -> data.surName;
-		cout << left << "|"; cout.width(15); cout << left << current -> data.commandCode;
-		cout << left << "|"; cout.width(10+10); cout << left << current -> data.score;
+		cout << left << "|"; cout.width(22); cout << left << current->data.surName;
+		cout << left << "|"; cout.width(15); cout << left << current->data.commandCode;
+		cout << left << "|"; cout.width(10 + 10); cout << left << current->data.score;
 		std::cout.precision(4);
-		cout << left << "|"; cout.width(18); cout << left << fixed << current -> data.place;
+		cout << left << "|"; cout.width(18); cout << left << fixed << current->data.place;
 		cout << left << "|";
-		printDate(current->data.date.day, current->data.date.month, current -> data.date.year, 16);
+		printDate(current->data.date.day, current->data.date.month, current->data.date.year, 16);
 		cout << "|" << endl;
 		current = current->next;
 	}
@@ -313,10 +313,3 @@ int main()
 	struct Record editRecord = { "Шишков", 'Ш', 79.9800, 3, {07,07,2022},0 };
 	editItem(1, editRecord);
 	DrawWithList();
-
-
-
-
-
-
-}
